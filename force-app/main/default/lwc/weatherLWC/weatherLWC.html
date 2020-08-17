@@ -21,53 +21,63 @@
                 <div class="slds-einstein-header__figure slds-size_1-of-4 slds-medium-size_1-of-3"></div>
             </header>
         </div>
-        <div style="width:350px">
-            <div class = "slds-p-left_medium slds-has-flexi-truncate slds-grid">
-                <div class = "slds-form-element">
+        <div class = "slds-m-around_small slds-card__body slds-card__body_inner">
+            <div class = "slds-has-flexi-truncate slds-grid">
+                <div class = "slds-form-element slds-p-right_medium">
                     <lightning-combobox 
                         name="Locations" 
                         label="Locations" 
                         placeholder="Search a location..."
-                        value = {value}
-                        options = {options}
-                        onchange = {handleselect}>
+                        value = {locValue}
+                        options = {locOptions}
+                        onchange = {locHandleSelect}>
+        
+                    </lightning-combobox>
+                </div>
+                <div class = "slds-form-element">
+                    <lightning-combobox 
+                        name="Timeframe" 
+                        label="Timeframe" 
+                        placeholder="Choose a setting"
+                        value = {timeValue}
+                        options = {timeOptions}
+                        onchange = {timeHandleSelect}>
         
                     </lightning-combobox>
                 </div>
             </div>
         </div>
 
-        <div>
-            <template if:true={isLocationSelected}>
-                <div class="slds-card__body slds-card__body_inner">
-                    <article class="slds-card slds-card_boundary">
-                        <div class="slds-card__header slds-grid slds-p-left_xx-small">
-                          <header id = "subHeader" class="slds-media slds-media_center slds-has-flexi-truncate">
-                            <div class="slds-media__figure slds-p-top_xxx-small">
-                                <span class="slds-icon_container slds-icon_container_circle slds-icon_small" style="width:50px">
-                                    <svg xmlns="http://www.w3.org/2000/svg">;
-                                        <use xlink:href={svgURL}></use>
-                                    </svg>
-                                </span>
-                            </div>
-                            <div class="slds-media__body">
-                              <h2 class="slds-card__header-title">
-                                  <span>
-                                      <b>
-                                          {getName}
-                                      </b>
-                                  </span>
-                              </h2>
-                            </div>
-                          </header>
+        <template if:true={isLocationSelected}>
+            <div class="slds-card__body slds-card__body_inner">
+                <article class="slds-card slds-card_boundary">
+                    <div class="slds-card__header slds-grid slds-p-left_xx-small">
+                        <header id = "subHeader" class="slds-media slds-media_center slds-has-flexi-truncate slds-p-vertical_xxx-small">
+                        <div class="slds-media__figure">
+                            <span class="slds-icon_container slds-icon_medium" style="width:45px">
+                                <svg class="slds-icon_medium" xmlns="http://www.w3.org/2000/svg" viewBox = "0 10 50 45">;
+                                    <use xlink:href={svgURL}></use>
+                                </svg>
+                            </span>
                         </div>
+                        <div class="slds-media__body">
+                            <h2 class="slds-card__header-title">
+                                <span>
+                                    <b>
+                                        {getName}
+                                    </b>
+                                </span>
+                            </h2>
+                        </div>
+                        </header>
+                    </div>
+                    {getPos}
 
 
-                      </article>
-                </div>
+                    </article>
+            </div>
 
-            </template>
-        </div>
+        </template>
         
         
     </article>

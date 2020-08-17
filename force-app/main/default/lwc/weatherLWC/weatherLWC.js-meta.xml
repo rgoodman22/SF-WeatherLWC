@@ -9,4 +9,9 @@
         <target>lightning__AppPage</target>
         <target>lightning__HomePage</target>
     </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
+            <property label="API Key" name="APIKey" type="String"></property>
+        </targetConfig>
+    </targetConfigs>
 </LightningComponentBundle>
