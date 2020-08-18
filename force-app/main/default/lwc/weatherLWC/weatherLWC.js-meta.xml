@@ -11,7 +11,7 @@
     </targets>
     <targetConfigs>
         <targetConfig targets="lightning__AppPage,lightning__HomePage,lightning__RecordPage">
-            <property label="API Key" name="APIKey" type="String"></property>
+            <property label="API Key" name="APIKey" type="String" description="Go to the OpenWeatherMap.org Website to request your own API key."></property>
         </targetConfig>
     </targetConfigs>
 </LightningComponentBundle>

@@ -1,4 +1,4 @@
-<template>
+<template>    
     <article class="slds-card">
         <div class="slds-grid slds-einstein-header slds-card__header">
             <header class="slds-media slds-media_center slds-has-flexi-truncate">
@@ -12,7 +12,7 @@
                     </div>
                     <div class="slds-media__body">
                         <h2 class="slds-truncate" title="Einstein (10+)">
-                            <a href="https://openweathermap.org/" class="slds-card__header-link" title="Live Flood Data">
+                            <a href="https://openweathermap.org/" class="slds-card__header-link" title="Live Weather Data">
                             <span class="slds-text-heading_small">Live Weather Updates</span>
                             </a>
                         </h2>
@@ -60,21 +60,79 @@
                                 </svg>
                             </span>
                         </div>
-                        <div class="slds-media__body">
-                            <h2 class="slds-card__header-title">
+                        <div class="slds-media__body slds-text-heading_medium">
+                            <h2 class="slds-card__header-title slds-text-heading_large">
                                 <span>
                                     <b>
                                         {getName}
                                     </b>
                                 </span>
                             </h2>
+                            <div class= "slds-text-heading_small">
+                                As of {getCurTime}
+                            </div>
+                            <div class="slds-text-heading_medium">
+                                The current condition is {getCDescription}.
+                            </div>
                         </div>
                         </header>
                     </div>
-                    {getPos}
+                    <div class="slds-card__body slds-card__body_inner slds-p-top_medium">
+                        <ul class="slds-has-dividers_bottom-space">
+                            <li class="slds-item">
+                                <div class="slds-grid slds-gutters">
+                                    <span class="slds-text-align_center slds-col">
+                                        <div class="slds-text-body_small slds-text-color_weak">Temperature:</div>
+                                        <div class="slds-text-heading_small"><b>{getCTemp}</b></div>
+                                    </span>
+                                    <span class="slds-text-align_center slds-col">
+                                        <div class="slds-text-body_small slds-text-color_weak">Feels Like:</div>
+                                        <div class="slds-text-heading_small"><b>{getCFeelsLike}</b></div>
+                                    </span>
+                                </div>
+                            </li>
+                            <li class="slds-item">
+                                <div class="slds-grid slds-gutters">
+                                    <span class="slds-text-align_center slds-col">
+                                        <div class="slds-text-body_small slds-text-color_weak">Wind Speed:</div>
+                                        <div class="slds-text-heading_small"><b>{getCWSpeed}</b></div>
+                                    </span>
+                                    <span class="slds-text-align_center slds-col">
+                                        <div class="slds-text-body_small slds-text-color_weak">Wind Direction:</div>
+                                        <div class="slds-text-heading_small"><b>{getCWDeg}</b></div>
+                                    </span>
+                                </div>
+                            </li>
+                            
+                            <li class="slds-item">
+                                <div class="slds-grid slds-gutters">
+                                    <span class="slds-text-align_center slds-col">
+                                        <div class="slds-text-body_small slds-text-color_weak">Sunrise:</div>
+                                        <div class="slds-text-heading_small"><b>{getCSunrise}</b></div>
+                                    </span>
+                                    <span class="slds-text-align_center slds-col">
+                                        <div class="slds-text-body_small slds-text-color_weak">Sunset:</div>
+                                        <div class="slds-text-heading_small"><b>{getCSunset}</b></div>
+                                    </span>
+                                </div>
+                            </li>
 
+                            <li class="slds-item">
+                                <div class="slds-grid slds-gutters">
+                                    <span class="slds-text-align_center slds-col">
+                                        <div class="slds-text-body_small slds-text-color_weak">Humidity:</div>
+                                        <div class="slds-text-heading_small"><b>{getCHumidity}</b></div>
+                                    </span>
+                                    <span class="slds-text-align_center slds-col">
+                                        <div class="slds-text-body_small slds-text-color_weak">Visibility:</div>
+                                        <div class="slds-text-heading_small"><b>{getCVisibility}</b></div>
+                                    </span>
+                                </div>
+                            </li>
 
-                    </article>
+                        </ul>
+                    </div>
+                </article>
             </div>
 
         </template>
