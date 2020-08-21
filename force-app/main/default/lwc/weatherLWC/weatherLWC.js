@@ -27,7 +27,7 @@ export default class weatherLWC extends LightningElement {
     
     @track wData; //weather values
     @track wError;
-    @track svgURL = `${weatherIcon}#snowy-3`;
+    @track svgURL = `${weatherIcon}#night`;
     @track timeValue = "Choose a setting...";
 
     @wire(call, {lat: '$lat', lon: '$lon', key: '$APIKey'})
@@ -84,7 +84,7 @@ export default class weatherLWC extends LightningElement {
     setDirection(deg) {
         deg = parseInt(deg);
         let dir = ['N','NE','E','SE','S','SW','W','NW','N'];
-        let ind = Math.round(360/deg);
+        let ind = Math.round((deg/45));
         return dir[ind];
     }
 
